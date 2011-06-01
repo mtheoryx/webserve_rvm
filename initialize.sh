@@ -52,6 +52,12 @@ else
 fi
 printf "=> Installing RVM the Ruby enVironment Manager\n  https://rvm.beginrescueend.com/rvm/install/\n"
 # TODO: Include the rvm installer in this script
+
+curl -s -O -L -B https://github.com/mtheoryx/webserve_rvm/raw/master/rvm-install-head
+chmod +x rvm-install-head
+
+"$PWD/rvm-install-head"
+
 # TODO: Include initial rvm rubies in this script
 # TODO: Include initial gemset creation and configuration in this script
 # TODO: install base level ruby gems in this script
