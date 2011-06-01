@@ -4,4 +4,7 @@
 # echo $HOME
 
 # Execute different command to test git push remote for public file
-echo $PATH
+# echo $PATH
+
+# Trying a client side post commit, instead
+`whoami`
