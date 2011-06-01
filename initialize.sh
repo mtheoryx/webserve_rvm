@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/env bash
 
-abort = false
+abort=false
 
 # First, see if rvm or git is already installed for this user
 if command -v git
