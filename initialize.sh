@@ -1,6 +1,7 @@
 #!/bin/env bash
 
 git=false
+ruby_version="1.9.2"
 
 # First, see if rvm or git is already installed for this user
 if command -v git
@@ -50,14 +51,43 @@ else
         git=false
     fi
 fi
+
 printf "=> Installing RVM the Ruby enVironment Manager\n  https://rvm.beginrescueend.com/rvm/install/\n"
-# TODO: Include the rvm installer in this script
+# TODO: include the rvm installer script from my github account for webserve
 
-curl -s -O -L -B https://github.com/mtheoryx/webserve_rvm/raw/master/rvm-install-head
-chmod +x rvm-install-head
-
-"$PWD/rvm-install-head"
+# curl -s -O -L -B https://github.com/mtheoryx/webserve_rvm/raw/master/rvm-install-head
+# chmod +x rvm-install-head
+# 
+# "$PWD/rvm-install-head"
+# 
+# if [[ -f rvm-install-head ]]
+#   then
+#     rm -f rvm-install-head
+# fi
+# 
+# printf "=> Setting up RVM to load with new shells.\n"
+# echo  '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*' >> "$HOME/.bash_profile"
+# 
+# printf "=> Loading RVM"
+# 
+# source ~/.rvm/scripts/rvm
 
 # TODO: Include initial rvm rubies in this script
+# printf "=> Installing Ruby 1.8.7\n  More information about installing rubies can be found at https://rvm.beginrescueend.com/rubies/installing/"
+# 
+# rvm install $ruby_version
+# 
+# printf "=> Using 1.9.2 and setting it as default for new shells\n  More information about Rubies can be found at https://rvm.beginrescueend.com/rubies/default/\n"
+# 
+# rvm use $ruby_version --default
+
 # TODO: Include initial gemset creation and configuration in this script
+# printf "=> Installing Bundler to the global gemset.\n  https://rvm.beginrescueend.com/gemsets/global/\n"
+# 
+# rvm gemset use global
+# 
+# gem install bundler --no-rdoc --no-ri
+# 
+# rvm gemset clear
+
 # TODO: install base level ruby gems in this script
