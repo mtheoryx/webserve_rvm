@@ -45,4 +45,5 @@ else
         printf "Something went wrong during install. Removing files."
         rm -rf $src_path $dest_path
         printf "System restored to clean slate."
+    fi
 fi
