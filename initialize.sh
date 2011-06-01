@@ -5,7 +5,7 @@ if command -v git
 then
     printf "Git already installed.\n"
 else
-    printf "Installing Git for user (git command not found)"
+    printf "Installing Git for user (git command not found)\n"
     src_path=$HOME/.src
     dest_path=$HOME/opt
     
@@ -17,7 +17,18 @@ else
     
     cd $src_path
     
+    printf "Getting git source.\n"
     curl -LO http://kernel.org/pub/software/scm/git/$package-$version.tar.bz2
     tar -xjvf $package-$version.tar.bz2
+    
+    ./configure --prefix=$dest_path
+    
+    printf "Making git source.\n"
+    make
+    
+    printf "Installing git source.\n"
+    make install
+    
+    printf "Git installation complete."
     
 fi
