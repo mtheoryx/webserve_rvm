@@ -34,16 +34,7 @@ else
     printf "Checking install...\n"
     cd $dest_path
     
-    if command -v git
-    then
-        printf "Git installation complete. Setting up your path...\n"
-        ln -s $dest_path/bin/git $HOME/bin/git
-        
-        printf "Git configured. Cleaning up your files now.\n"
-        rm -rf $src_path
-    else
-        printf "Something went wrong during install. Removing files."
-        rm -rf $src_path $dest_path
-        printf "System restored to clean slate."
-    fi
+    printf "Git installation complete. Setting up your path...\n"
+    ln -s $dest_path/bin/git $HOME/bin/git
+    
 fi
