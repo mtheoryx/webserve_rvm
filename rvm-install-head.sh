@@ -292,15 +292,15 @@ esac
 #   installer script.
 chmod +x ./scripts/install
 
-flags=()
-if (( ${rvm_trace_flag:-0} == 1 ))
-then
-  flags+=("--trace")
-fi
-if (( ${rvm_debug_flag:-0} == 1 ))
-then
-  flags+=("--debug")
-fi
+# flags=()
+# if (( ${rvm_trace_flag:-0} == 1 ))
+# then
+#   flags+=("--trace")
+# fi
+# if (( ${rvm_debug_flag:-0} == 1 ))
+# then
+#   flags+=("--debug")
+# fi
 
 # Now we yield to the RVM installer.
 exec ./scripts/install ${flags[*]} --prefix "$rvm_prefix" --path "$rvm_path"
