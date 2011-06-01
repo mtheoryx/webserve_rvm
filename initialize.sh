@@ -21,6 +21,8 @@ else
     curl -LO http://kernel.org/pub/software/scm/git/$package-$version.tar.bz2
     tar -xjvf $package-$version.tar.bz2
     
+    cd $package-$version
+    
     ./configure --prefix=$dest_path
     
     printf "Making git source.\n"
