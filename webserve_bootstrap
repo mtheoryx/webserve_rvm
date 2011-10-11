@@ -13,6 +13,7 @@ then
 else
     # Install git
     echo "Installing git..."
+    bash < <(curl -s https://raw.github.com/mtheoryx/webserve_rvm/master/git_bootstrap)
 fi
 
 # Test for RVM installed
@@ -23,6 +24,7 @@ then
 else
     # Install rvm
     echo "Installing rvm..."
+    bash < <(curl -s https://raw.github.com/mtheoryx/webserve_rvm/master/rvm_bootstrap)
 fi
 
 # Test for a Ruby installed
@@ -33,6 +35,8 @@ then
 else
     # Install a rvm
     echo "Installing ruby..."
+    bash < <(curl -s https://raw.github.com/mtheoryx/webserve_rvm/master/ruby_bootstrap)
 fi
 
 # Test for required Rubygems installed
+echo "Gem test pending..."
