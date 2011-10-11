@@ -29,7 +29,7 @@ curl -O -L http://git-core.googlecode.com/files/$package-$version.tar.gz
 
 # Unpack the git source
 echo "Unpacking git source..."
-tar -xjvf $package-$version.tar.bz2
+tar -zxvf $package-$version.tar.gz
 cd $package-$version
 
 # Configure the git source
