@@ -1,5 +1,11 @@
 #!/bin/env bash
 
+# Test for Git installed
+# Test for RVM installed
+# Test for a Ruby installed
+# Test for Rubygems installed
+
+
 git=false
 ruby_version="1.9.2"
 
@@ -91,3 +97,4 @@ printf "=> Installing RVM the Ruby enVironment Manager\n  https://rvm.beginrescu
 # rvm gemset clear
 
 # TODO: install base level ruby gems in this script
+# rvm install 1.9.2

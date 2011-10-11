@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+git=false
+rvm=false
+ruby=false
+gems=false
+
+# Test for Git installed
+if command -v git
+then
+    echo "Git already installed."
+    git=true
+else
+    # Install git
+    echo "Installing git..."
+fi
+
+# Test for RVM installed
+if command -v rvm
+then
+    rvm=true
+    echo "RVM already installed."
+else
+    # Install rvm
+    echo "Installing rvm..."
+fi
+
+# Test for a Ruby installed
+if command -v ruby
+then
+    ruby=true
+    echo "Ruby already installed."
+else
+    # Install a rvm
+    echo "Installing ruby..."
+fi
+
+# Test for required Rubygems installed

@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+# Check for RVM
+if command -v rvm
+then
+    echo "Uninstalling rvm..."
+    # rvm implode
+    # rm -rf $HOME/.rvm
+    # rm $HOME/.rvmrc
+else
+    echo "RVM is not installed."
+fi
+# Check for GIT
+if command -v git
+then
+    echo "Uninstalling git..."
+    # Remove git installation
+else
+    echo "Git is not installed."
+fi
+
+# Remove source directories used and general cleanup
