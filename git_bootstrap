@@ -10,22 +10,41 @@ src=$HOME/.src
 dest=$HOME/opt
 
 # Create directories needed
+echo "Testing for required directories..."
+
 if [ ! -d "$src" ]; then
-    mkdir $src
-fi
-if [ ! -d "$dest" ]; then
-    mkdir $dest
+    mkdir -p $src
 fi
 
+if [ ! -d "$dest" ]; then
+    mkdir -p $dest
+fi
+
+cd $src
 
 # Download the git source
+echo "Downloading git source code..."
+curl -O -L http://kernel.org/pub/software/scm/git/$package-$version.tar.bz2 
 
 # Unpack the git source
+echo "Unpacking git source..."
+tar -xjvf $package-$version.tar.bz2
+cd $package-$version
 
 # Configure the git source
+echo "Configuring git source..."
+./configure --prefix=$dest
 
 # Make the git source
+echo "Making git source..."
+make -j2
 
 # install the git source
+echo "Installing git source..."
+make install
 
 # Test the git install
+echo "Testing git install..."
+cd $dest
+
+echo "Git install complete."
