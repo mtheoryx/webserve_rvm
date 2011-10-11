@@ -9,43 +9,65 @@ version=1.7.7
 src=$HOME/.src
 dest=$HOME/opt
 
-# Create directories needed
-echo "Testing for required directories..."
+if command -v git
+then
+    echo "Git already installed."
+    git=true
+else
+    # Install git
+    # Create directories needed
+    echo "Testing for required directories..."
 
-if [ ! -d "$src" ]; then
-    mkdir -p $src
+    if [ ! -d "$src" ]; then
+        mkdir -p $src
+    fi
+
+    if [ ! -d "$dest" ]; then
+        mkdir -p $dest
+    fi
+
+    cd $src
+
+    # Download the git source
+    echo "Downloading git source code..."
+    curl -O -L http://git-core.googlecode.com/files/$package-$version.tar.gz
+
+
+    # Unpack the git source
+    echo "Unpacking git source..."
+    tar -zxvf $package-$version.tar.gz
+    cd $package-$version
+
+    # Configure the git source
+    echo "Configuring git source..."
+    ./configure --prefix=$dest
+
+    # Make the git source
+    echo "Making git source..."
+    make -j2
+
+    # install the git source
+    echo "Installing git source..."
+    make install
+
+    echo "Testing git install..."
+    cd $dest
+    
+    # echo PATH=$PATH:/$dest/bin
+    if [ ! -f $HOME/.bash_profile ]
+    then
+        touch $HOME/.bash_profile
+    fi
+    
+    echo PATH=$PATH:$HOME/opt/bin >> $HOME/.bash_profile
+    source $HOME/.bash_profile
 fi
-
-if [ ! -d "$dest" ]; then
-    mkdir -p $dest
-fi
-
-cd $src
-
-# Download the git source
-echo "Downloading git source code..."
-curl -O -L http://git-core.googlecode.com/files/$package-$version.tar.gz
-
-
-# Unpack the git source
-echo "Unpacking git source..."
-tar -zxvf $package-$version.tar.gz
-cd $package-$version
-
-# Configure the git source
-echo "Configuring git source..."
-./configure --prefix=$dest
-
-# Make the git source
-echo "Making git source..."
-make -j2
-
-# install the git source
-echo "Installing git source..."
-make install
 
 # Test the git install
-echo "Testing git install..."
-cd $dest
-
-echo "Git install complete."
+if command -v git
+then
+    git=true
+    echo "Git install complete."
+else
+    echo "Something went wrong :("
+fi
