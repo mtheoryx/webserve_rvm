@@ -59,7 +59,9 @@ else
         touch $HOME/.bash_profile
     fi
     
-    echo PATH=$PATH:$HOME/opt/bin >> $HOME/.bash_profile
+    echo 'PATH=$PATH:$HOME/opt/bin' >> $HOME/.bash_profile
+    echo 'export PATH' >> $HOME/.bash_profile
+    
     source $HOME/.bash_profile
 fi
 
