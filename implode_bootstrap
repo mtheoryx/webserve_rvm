@@ -2,6 +2,7 @@
 
 echo "This is the implode bootstrap script..."
 
+
 # Check for RVM
 if command -v rvm
 then
@@ -22,3 +23,10 @@ else
 fi
 
 # Remove source directories used and general cleanup
+if [ -d "$HOME/.src" ]; then
+    rm -rf $HOME/.src
+fi
+
+if [ -d "$HOME/opt" ]; then
+    rm -rf $HOME/opt
+fi

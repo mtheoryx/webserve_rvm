@@ -1,3 +1,31 @@
 #!/bin/env bash
 
-echo "This is the git bootstrap script..."
+echo "Installing git for user...\n"
+
+# Variables needed
+git=false
+package=git
+version=1.7.7
+src=$HOME/.src
+dest=$HOME/opt
+
+# Create directories needed
+if [ ! -d "$src" ]; then
+    mkdir $src
+fi
+if [ ! -d "$dest" ]; then
+    mkdir $dest
+fi
+
+
+# Download the git source
+
+# Unpack the git source
+
+# Configure the git source
+
+# Make the git source
+
+# install the git source
+
+# Test the git install
