@@ -24,7 +24,8 @@ cd $src
 
 # Download the git source
 echo "Downloading git source code..."
-curl -O -L http://kernel.org/pub/software/scm/git/$package-$version.tar.bz2 
+curl -O -L http://git-core.googlecode.com/files/$package-$version.tar.gz
+
 
 # Unpack the git source
 echo "Unpacking git source..."
