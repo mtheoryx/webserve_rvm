@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+echo "This is the implode bootstrap script..."
+
 # Check for RVM
 if command -v rvm
 then
