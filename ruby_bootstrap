@@ -1,3 +1,14 @@
 #!/bin/env bash
 
 echo "This is the ruby bootstrap script..."
+
+if command -v ruby
+then
+    echo "Ruby already installed."
+else
+    # Install latest ruby 1.9.2
+    echo "Installing a version of Ruby to use..."
+    rvm install 1.9.2
+fi
+
+

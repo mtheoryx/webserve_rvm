@@ -12,3 +12,8 @@ else
     echo "Installing rvm..."
     bash < <(curl -s https://raw.github.com/mtheoryx/rvm/master/binscripts/rvm-installer)
 fi
+
+#set up the rvm in the path
+echo 'PATH=$PATH:$HOME/.rvm/bin'|cat - $HOME/.bash_profile > /tmp/out && mv /tmp/out $HOME/.bash_profile
+echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
+source $HOME/.bash_profile
