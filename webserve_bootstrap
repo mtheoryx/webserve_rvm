@@ -24,7 +24,8 @@ then
 else
     # Install rvm
     echo "Installing rvm..."
-    bash < <(curl -s https://raw.github.com/mtheoryx/webserve_rvm/master/rvm_bootstrap)
+    # bash < <(curl -s https://raw.github.com/mtheoryx/webserve_rvm/master/rvm_bootstrap)
+    bash < <(curl -s https://raw.github.com/mtheoryx/webserve_rvm/rvm/rvm_bootstrap)
 fi
 
 # Test for a Ruby installed
