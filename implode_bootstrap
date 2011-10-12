@@ -14,19 +14,19 @@ else
     echo "RVM is not installed."
 fi
 # Check for GIT
-if command -v git
-then
-    echo "Uninstalling git..."
-    # Remove git installation
-else
-    echo "Git is not installed."
-fi
-
-# Remove source directories used and general cleanup
-if [ -d "$HOME/.src" ]; then
-    rm -rf $HOME/.src
-fi
-
-if [ -d "$HOME/opt" ]; then
-    rm -rf $HOME/opt
-fi
+# if command -v git
+# then
+#     echo "Uninstalling git..."
+#     # Remove git installation
+# else
+#     echo "Git is not installed."
+# fi
+# 
+# # Remove source directories used and general cleanup
+# if [ -d "$HOME/.src" ]; then
+#     rm -rf $HOME/.src
+# fi
+# 
+# if [ -d "$HOME/opt" ]; then
+#     rm -rf $HOME/opt
+# fi
