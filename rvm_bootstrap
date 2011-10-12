@@ -8,5 +8,5 @@ then
     rvm=true
 else
     echo "Installing rvm..."
-    
+    bash < <(curl -s https://raw.github.com/mtheoryx/rvm/master/binscripts/rvm-installer)
 fi
